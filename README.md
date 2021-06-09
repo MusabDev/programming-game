@@ -14,7 +14,7 @@ Homepage:-
 
 Challenge Page:-
 
-![App Screenshot](https://lh3.google.com/u/0/d/1iajCVZHRbua-fliTVGV9SQp0kcqKi1lJ=w1366-h667-iv1)
+![App Screenshot](https://github.com/MusabDev/programming-game/blob/main/assets/screenshots/2.png?raw=true)
 ## Installation 
 
 For install this PHP game you need to download this one and then you will be move it to your htdocs folder and upload database that's it.
