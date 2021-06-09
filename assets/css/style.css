@@ -1,0 +1,291 @@
+/* ===================
+    Common CSS
+=================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+:root {
+    --primary-color: #0496FF;
+    --primary-color-deep: #0088e9;
+    --secondary-color: #0B132B;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: var(--secondary-color);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color-deep);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)), url(../images/header-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto Mono', monospace;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.btn {
+    background: var(--secondary-color);
+    padding: .7rem 1.5rem;
+    border-radius: 4px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 600;
+    border: none;
+    outline: none;
+    display: inline-block;
+    font-size: 1rem;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.btn::before {
+    content: "🥳";
+    position: absolute;
+    left: -100%;
+    top: 0;
+    bottom: 0;
+    width: 3rem;
+    background: var(--primary-color-deep);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.btn:hover,
+.btn:focus,
+.btn.active {
+    background: var(--primary-color);
+    padding-left: 4rem;
+}
+
+.btn:hover::before,
+.btn:focus::before,
+.btn.active::before {
+    left: 0;
+}
+
+/* ===================
+    Homepage CSS
+=================== */
+
+.homepage {
+    max-width: 500px;
+    width: 100%;
+    backdrop-filter: blur(30px);
+    background: rgba(255,255,255,.1);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: .5rem;
+    padding: 2rem;
+    margin: 2rem;
+}
+
+.homepage .container .title {
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 800;
+    text-align: center;
+}
+
+.homepage .container .desc {
+    font-size: 1.3rem;
+    color: white;
+    text-align: center;
+    font-weight: 500;
+    line-height: 2rem;
+    margin: 1rem 0;
+}
+
+/* ===================
+    Challenge CSS
+=================== */
+
+.challenge-page .points .num {
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+    font-weight: 800;
+}
+
+.challenge-page .points .txt {
+    font-size: 1.5rem;
+    color: white;
+    text-align: center;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.challenge-page .title {
+    font-size: 1.5rem !important;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.code {
+    background: rgba(255,255,255,.7);
+    border: 1px solid rgba(255,255,255,.1);
+    overflow: auto;
+    border-radius: .2rem;
+    padding: 1rem;
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.challenge-page .options {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.challenge-page .options button {
+    border: none;
+    outline: none;
+    background: white;
+    padding: .7rem 2rem;
+    cursor: pointer;
+    border-radius: .2rem;
+    margin-right: 1rem;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-color)
+}
+
+.challenge-page .options button.currect {
+    background: #4CAF50;
+    color: white;
+}
+
+.challenge-page .options button.none {
+    background: #f7b217;
+    color: white;
+}
+
+.challenge-page .options button.wrong {
+    background: red;
+    color: white;
+}
+
+/* ===================
+    Loader CSS
+=================== */
+
+#loading-mask {
+    z-index: 1000;
+    overflow: hidden;
+    padding: 1rem 0;
+}
+
+#loading-mask .preloader {
+    position: absolute;
+    text-align: center;
+    height: 20px;
+    width: 20px;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#loading-mask .c-three-dots-loader {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    animation-fill-mode: both;
+    animation: three-dots-loader-animation 2s infinite ease-in-out;
+    animation-delay: -0.16s;
+    color: white;
+}
+
+#loading-mask .c-three-dots-loader:before, #loading-mask .c-three-dots-loader:after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 0;
+    animation: three-dots-loader-animation 2s infinite ease-in-out;
+    border-radius: 50%;
+}
+
+#loading-mask .c-three-dots-loader:before {
+    left: -24px;
+    animation-delay: -0.32s;
+}
+
+#loading-mask .c-three-dots-loader:after {
+    left: 24px;
+}
+
+#loading-mask .load-mask-wrapper {
+    position: absolute;
+    text-align: center;
+    height: 200px;
+    width: 200px;
+    top: calc(50vh - 100px);
+    left: calc(50vw - 100px);
+}
+
+#loading-mask .load-mask-innerDots {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 100%;
+    height: 100%;
+}
+
+#loading-mask .load-mask-outerPlane {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes three-dots-loader-animation {
+    0%,
+    80%,
+    100% {
+        box-shadow: 0 20px 0 -24px;
+    }
+    40% {
+        box-shadow: 0 20px 0 0;
+    }
+}
