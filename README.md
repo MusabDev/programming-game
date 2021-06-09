@@ -9,7 +9,7 @@ This is a programming game only for programmers. And in this game you gonna comp
 
 Homepage:-
 
-![App Screenshot](https://lh3.google.com/u/0/d/1JCWk8xJEwbsEp7yXv_snznVZN7Z4p9iE=w1366-h667-iv1)
+![App Screenshot](https://github.com/MusabDev/programming-game/blob/main/assets/screenshots/1.png?raw=true)
 
 
 Challenge Page:-
